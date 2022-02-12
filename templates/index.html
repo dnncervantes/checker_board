@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .wrap{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+        table {
+            border: 2px solid black;
+            border-collapse: collapse;
+
+        }
+        td {
+            border: 2px solid black;
+            height: 100px;
+            width: 100px;
+        }
+        .color1 {
+            background-color: red;
+        }
+
+        .color2 {
+            background-color: black;
+        }
+    </style>
+    <title>CheckerBoard</title>
+</head>
+<body>
+
+    <div class="wrap">
+        <h1>***CheckerBoard***</h1>
+        <table>
+            {% for i in range(length) %}
+            <tr>
+                {% for j in range(width) %}
+                <td class="color{{ (j + i) % 2 + 1}}"></td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</body>
+</html>
